@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+           Rick & Morty
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+       
+    </head>
+
+    <body style="background-color: black;">
+   
+        
+    <img  onclick="House()" class="animate__animated animate__rollIn" style="display: block; margin: 0 auto" src="https://occ-0-2705-1001.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABcb0yL8KdS3lxlB7w7kD6GfBTivnVVTfpiW0ZQTi6nvwWZIEpS5rU5iFeO_kJxGzEDnOaLx7iq0zM3FJc5e1gGqEGcaCkNotiOAl.png">
+
+       <div class="container">
+       <div id="top"></div>
+    
+        
+        <div style="text-align: center;">
+        
+    
+        <h1 class="animate__animated animate__flip" style="color:rgba(0,176,200,255)">Bienvenido a mi web de Rick & Morty </h1>
+        <br>
+
+ 
+  
+
+
+        <button id="buscar" class="btn btn-success" style="background-color: rgba(0,176,200,255); color:black;" class="animate__animated animate__flip" onclick="search()">Mostrar Todos <br> Los Personajes</button>
+       
+       
+
+ 
+
+        <br>
+        <br>
+        <input type="text" id="id1">
+      
+
+        <br>
+        <br>
+        <button style="background-color:rgba(0,176,200,255); color: black;" class="btn btn-success" onclick="mostrar()"> Buscar Personaje</button>
+        
+
+     
+    
+        </div>
+    
+
+        <div id="results">
+          
+        </div>
+
+        <div style="text-align: right;" id="footerPage">
+
+            <button style="display:none; background-color: rgba(0,255,0,2);" id="buttonBack" onclick="back()"class="btn btn-warning"> << </button>
+            <button style="display:none; background-color:rgba(0,176,200,255); color: black;" id="buttonNext" onclick="next()" class="btn btn-success"> >> </button> 
+            
+              <script src="main2.js"></script>
+        </div>
+     
+        
+    </div>
+    </body>
+
+    <script type="text/javascript">
+
+
+        function mostrar(){
+
+            let id1=document.getElementById(`id1`).value;
+            if( id1 != "")
+            {
+            document.getElementById("results").innerHTML = "";
+            document.getElementById("buttonNext").style.display = "none";
+            document.getElementById("buttonBack").style.display = "none";
+            document.getElementById("buscar").style.display = "inline";
+            currentApiURL = `https://rickandmortyapi.com/api/character/?name=${id1}&status=alive`
+            api();
+            
+            }
+        }
+
+</script>
+</html>
